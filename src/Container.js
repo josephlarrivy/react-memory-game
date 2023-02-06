@@ -33,16 +33,18 @@ const Container = () => {
 
 
   return (
-    <div className="container">
-      {boxes.map(box => {
-        return (
-          <Square id={box.id} initialValues={initialValues} status={status} setStatus={setStatus} userPicks={userPicks} />
-        )
-      }
-      )}
-      <br></br>
-      <StatusButton status={status} setStatus={setStatus} />
-    </div>
+    <>
+      <div className="container">
+        {boxes.map(box => {
+          return (
+            <Square id={box.id} initialValues={initialValues} status={status} setStatus={setStatus} userPicks={userPicks} />
+          )
+        }
+        )}
+        <br></br>
+        <StatusButton status={status} setStatus={setStatus} />
+      </div>
+    </>
   )
   
   
