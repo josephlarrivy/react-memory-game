@@ -1,33 +1,42 @@
-import React, {useState}from "react";
+import React, {useEffect, useState}from "react";
 import Square from "./Square";
 
 import './Container.css'
 
 const Container = () => {
 
-    const [isSelected, setIsSelected] = useState('unselected');
+  const [initialValues, setInitialValues] = useState([])
 
-    const boxes = [
-        { 'id': 1, 'isSelected': isSelected },
-        { 'id': 2, 'isSelected': isSelected },
-        { 'id': 3, 'isSelected': isSelected }
-    ]
-
-
-    const handleClick = () => {
-        console.log('click')
-        setIsSelected('selected')
+  
+  useEffect(() => {
+    const set1 = new Set();
+    while (set1.size <= 5) {
+      let pickRandNum = Math.floor(Math.random() * 16);
+      set1.add(pickRandNum);
     }
+    let array = [];
+    for (let num of set1) {
+      array.push(num)
+    }
+    setInitialValues(array)
+  }, [])
 
-    return (
-        <div className="container">
-            {boxes.map(box => {
-                return (
-                <Square id={box.id} isSelected={box.isSelected} handleClick={handleClick}/>
-                )}
-            )}
-        </div>
-    )
+  console.log(initialValues)
+
+  let boxes = [
+    { 'id': 0 }, { 'id': 1 }, { 'id': 2 }, { 'id': 3 }, { 'id': 4 }, { 'id': 5 }, { 'id': 6 }, { 'id': 7 }, { 'id': 8 }, { 'id': 9 }, { 'id': 10 }, { 'id': 11 }, { 'id': 12 }, { 'id': 13 }, { 'id': 14 }, { 'id': 15 }
+  ]
+
+
+  return (
+    <div className="container">
+      {boxes.map(box => {
+        return (
+        <Square id={box.id} initialValues={initialValues}/>
+        )}
+      )}
+    </div>
+  )
 }
 
 export default Container;

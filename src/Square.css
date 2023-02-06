@@ -7,7 +7,9 @@
 }
 
 .selected {
-    background-color: #FF3334;
+    background-color: #C00000;
+    /* background-image: url('./082D41DE-BF6B-4CAA-819F-077EEEFD96F5_1_105_c.jpeg'); */
+    background-size: cover;
     width: 8rem;
     height: 8rem;
     margin: 20px;

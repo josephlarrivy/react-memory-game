@@ -2,34 +2,30 @@ import React, {useState} from "react";
 import './Square.css'
 import useToggle from "./hooks/useToggle";
 
-// const Square = () => {
 
-//   const [isSelected, setIsSelected] = useToggle('unselected');
+const Square = ({id, initialValues}) => {
 
-//   const handleClick = () => {
-//     console.log('click')
-//     setIsSelected
-//   }
+  const [isSelected, setIsSelected] = useState('unselected');
 
 
-//   return (
-//     <div>
-//       <div onClick={handleClick} className="selected"></div>
-//       <div onClick={handleClick} className="unselected"></div>
+  const handleClick = (e) => {
+    setIsSelected('selected')
+  }
 
-//     </div>
-//   )
-// }
+  if (initialValues.includes(id)) {
+    return (
+      <div>
+        <div key={id} id={id} className={'selected'} onClick={handleClick}></div>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <div key={id} id={id} className={isSelected} onClick={handleClick}></div>
+      </div>
+    )
+  }
 
-// export default Square;
-
-const Square = ({id, isSelected, handleClick}) => {
-
-  return (
-    <div>
-      <div key={id} id={id} className={isSelected} onClick={handleClick}></div>
-    </div>
-  )
 }
 
 export default Square;
