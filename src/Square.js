@@ -18,9 +18,14 @@ const Square = ({id, initialValues, status, setStatus, userPicks}) => {
     console.log(initialValues)
     console.log(userPicks)
 
-    if (sortedInitialValues.toString() == sortedUserPicks.toString()) {
-      setStatus('win')
+    if (userPicks.length == 6) {
+      if (sortedInitialValues.toString() == sortedUserPicks.toString()) {
+        setStatus('win')
+      } else {
+        setStatus('lose')
+      }
     }
+    
   }
 
 
@@ -53,6 +58,14 @@ const Square = ({id, initialValues, status, setStatus, userPicks}) => {
         <div className="image"></div>
       </>
       
+    )
+  } else if (status == 'lose') {
+    return (
+      <>
+        <h1>LOSE</h1>
+        <div className="image"></div>
+      </>
+
     )
   } 
   
