@@ -1,0 +1,15 @@
+.unselected {
+    background-color: #FFBBC1;
+    width: 8rem;
+    height: 8rem;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.selected {
+    background-color: #FF3334;
+    width: 8rem;
+    height: 8rem;
+    margin: 20px;
+    border-radius: 20px;
+}
