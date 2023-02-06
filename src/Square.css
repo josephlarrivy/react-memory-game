@@ -18,7 +18,7 @@
 }
 
 .selected {
-    background-image: url('./082D41DE-BF6B-4CAA-819F-077EEEFD96F5_1_105_c.jpeg');
+    background-image: url('./Screenshot 2023-02-06 at 2.36.42 PM.png');
     background-size: cover;
     width: 8rem;
     height: 8rem;
@@ -27,6 +27,12 @@
     border-radius: 20px;
 }
 
-h1 {
-    color: #FFBBC1;
+.image {
+    background-image: url('./Screenshot 2023-02-06 at 2.36.42 PM.png');
+    background-size: cover;
+    width: 10rem;
+    height: 10rem;
+    margin: 3px;
+    border: 3px solid #FF3334;
+    border-radius: 20px;
 }

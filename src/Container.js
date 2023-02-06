@@ -26,30 +26,24 @@ const Container = () => {
   }, [])
 
 
-  
-
-  
-  
-
-
   let boxes = [
     { 'id': 0 }, { 'id': 1 }, { 'id': 2 }, { 'id': 3 }, { 'id': 4 }, { 'id': 5 }, { 'id': 6 }, { 'id': 7 }, { 'id': 8 }, { 'id': 9 }, { 'id': 10 }, { 'id': 11 }, { 'id': 12 }, { 'id': 13 }, { 'id': 14 }, { 'id': 15 }
   ]
 
 
 
-    return (
-      <div className="container">
-        {boxes.map(box => {
-          return (
-            <Square id={box.id} initialValues={initialValues} status={status} setStatus={setStatus} userPicks={userPicks} />
-          )
-        }
-        )}
-        <br></br>
-        <StatusButton status={status} setStatus={setStatus} />
-      </div>
-    )
+  return (
+    <div className="container">
+      {boxes.map(box => {
+        return (
+          <Square id={box.id} initialValues={initialValues} status={status} setStatus={setStatus} userPicks={userPicks} />
+        )
+      }
+      )}
+      <br></br>
+      <StatusButton status={status} setStatus={setStatus} />
+    </div>
+  )
   
   
 }

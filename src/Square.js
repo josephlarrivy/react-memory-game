@@ -48,9 +48,11 @@ const Square = ({id, initialValues, status, setStatus, userPicks}) => {
     )
   } else if (status == 'win') {
     return (
-      <div>
-        <h1>WIN!!!    WIN!!!    WIN!!!   </h1>
-      </div>
+      <>
+        <h1>WIN!</h1>
+        <div className="image"></div>
+      </>
+      
     )
   } 
   
