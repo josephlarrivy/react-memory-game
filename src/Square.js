@@ -19,7 +19,7 @@ const Square = ({id, initialValues, status, setStatus, userPicks}) => {
     console.log(userPicks)
 
     if (sortedInitialValues.toString() == sortedUserPicks.toString()) {
-      console.log('win')
+      setStatus('win')
     }
   }
 
@@ -29,7 +29,7 @@ const Square = ({id, initialValues, status, setStatus, userPicks}) => {
     if (initialValues.includes(id)) {
       return (
         <div>
-          <div key={id} id={id} className={'selected'}></div>
+          <div key={id} id={id} className={'starting'}></div>
         </div>
       )
     } else {
@@ -44,6 +44,12 @@ const Square = ({id, initialValues, status, setStatus, userPicks}) => {
     return (
       <div>
         <div key={id} id={id} className={isSelected} onClick={handleClick}></div>
+      </div>
+    )
+  } else if (status == 'win') {
+    return (
+      <div>
+        <h1>WIN!!!    WIN!!!    WIN!!!   </h1>
       </div>
     )
   } 

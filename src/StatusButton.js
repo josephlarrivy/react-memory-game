@@ -10,6 +10,9 @@ const StatusButton = ({status, setStatus}) => {
     } else if (status == 'playing') {
       // setStatus('starting')
       window.location.reload(true);
+    } else if (status == 'win') {
+      // setStatus('starting')
+      window.location.reload(true);
     }
 
   }
@@ -22,6 +25,12 @@ const StatusButton = ({status, setStatus}) => {
       </>
     )
   } else if (status == 'playing') {
+    return (
+      <>
+        <button onClick={handleClick}>New Game</button>
+      </>
+    )
+  } else if (status == 'win') {
     return (
       <>
         <button onClick={handleClick}>New Game</button>
