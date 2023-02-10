@@ -7,7 +7,7 @@ import './Container.css'
 const Container = () => {
 
   const [initialValues, setInitialValues] = useState([])
-  const [status, setStatus] = useState('starting')
+  const [status, setStatus] = useState('preGame')
 
   let userPicks = []
 
@@ -22,7 +22,7 @@ const Container = () => {
       array.push(num)
     }
     setInitialValues(array.sort())
-    setStatus('starting')
+    setStatus('preGame')
   }, [])
 
 

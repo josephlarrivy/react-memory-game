@@ -28,9 +28,13 @@ const Square = ({id, initialValues, status, setStatus, userPicks}) => {
     
   }
 
-
-
-  if (status == 'starting') {
+  if (status == 'preGame') {
+    return (
+      <div>
+        <div key={id} id={id} className={isSelected}></div>
+      </div>
+    )
+  } else if (status == 'starting') {
     if (initialValues.includes(id)) {
       return (
         <div>
@@ -54,7 +58,6 @@ const Square = ({id, initialValues, status, setStatus, userPicks}) => {
   } else if (status == 'win') {
     return (
       <>
-        <h1>WIN!</h1>
         <div className="image"></div>
       </>
       
@@ -62,10 +65,10 @@ const Square = ({id, initialValues, status, setStatus, userPicks}) => {
   } else if (status == 'lose') {
     return (
       <>
-        <h1>LOSE</h1>
-        <div className="image"></div>
+        <div className="lose">
+          <h1>:(</h1>
+        </div>
       </>
-
     )
   } 
   

@@ -4,7 +4,10 @@ import './StatusButton.css'
 const StatusButton = ({status, setStatus}) => {
 
   const handleClick = () => {
-    if (status == 'starting') {
+    if (status == 'preGame') {
+      setStatus('starting')
+      // window.location.reload(true);
+    } else if (status == 'starting') {
       setStatus('playing')
       // window.location.reload(true);
     } else if (status == 'playing' || status == 'win' || status == 'lose') {
@@ -18,7 +21,13 @@ const StatusButton = ({status, setStatus}) => {
   }
 
 
-  if (status == 'starting') {
+  if (status == 'preGame') {
+    return (
+      <>
+        <button onClick={handleClick}>SHOW TILES</button>
+      </>
+    )
+  } else if (status == 'starting') {
     return (
       <>
         <button onClick={handleClick}>START</button>
